@@ -1,0 +1,9 @@
+1. Month-to-month customers have the highest churn rate.
+
+2. Customers with higher monthly charges tend to churn more.
+
+3. Customers with short tenure are more likely to leave.
+
+4. Long-term contract customers stay longer.
+
+5. Customers without tech support churn more.
