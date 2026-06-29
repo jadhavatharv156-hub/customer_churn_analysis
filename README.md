@@ -105,14 +105,13 @@ customer_churn_analysis/
 ## 🖥️ How to Run
 
 ### 1. Clone Repo
-```bash
+
 git clone https://github.com/your-username/customer_churn_analysis.git
 cd customer_churn_analysis
 
-
 ---
 
-# 📌 SAMPLE (HOW IT WILL LOOK ON GITHUB)
+## 📌 SAMPLE (HOW IT WILL LOOK ON GITHUB)
 
 ---
 
