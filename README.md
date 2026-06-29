@@ -2,10 +2,6 @@
 
 A machine learning web application that predicts whether a telecom customer will stay or churn based on service usage data.
 
----
-
-## 🚀 Live Demo
-https://your-app-url.com
 
 ---
 
