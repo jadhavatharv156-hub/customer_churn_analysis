@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/prediction">Prediction</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Customer Churn Dashboard</h1>
+        <p>
+            Customer Analytics, Business Insights and Machine Learning Results
+        </p>
+    </section>
+
+    <!-- Statistics -->
+    <div class="stats-container">
+
+        <div class="stats-card">
+            <h2>7043</h2>
+            <p>Total Customers</p>
+        </div>
+
+        <div class="stats-card">
+            <h2>1869</h2>
+            <p>Customers Churned</p>
+        </div>
+
+        <div class="stats-card">
+            <h2>26.5%</h2>
+            <p>Churn Rate</p>
+        </div>
+
+        <div class="stats-card">
+            <h2>80.27%</h2>
+            <p>Model Accuracy</p>
+        </div>
+
+    </div>
+
+    <!-- Business Insights -->
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Business Insights</h2>
+
+            <ul>
+                <li>Customers with higher monthly charges are more likely to churn.</li>
+                <li>Month-to-month contracts show higher churn rates.</li>
+                <li>Customers with low tenure have greater churn probability.</li>
+                <li>Fiber optic users tend to churn more frequently.</li>
+                <li>Long-term contracts improve customer retention.</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+            <h2>Model Information</h2>
+
+            <p><strong>Algorithm:</strong> Logistic Regression</p>
+
+            <p><strong>Accuracy:</strong> 80.27%</p>
+
+            <p><strong>Features Used:</strong></p>
+
+            <ul>
+                <li>Gender</li>
+                <li>Contract Type</li>
+                <li>Tenure</li>
+                <li>Monthly Charges</li>
+                <li>Internet Service</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Charts -->
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Customer Churn Count</h2>
+            <img src="{{ url_for('static', filename='churn_count.png') }}">
+        </div>
+
+        <div class="card">
+            <h2>Gender vs Churn</h2>
+            <img src="{{ url_for('static', filename='gender_churn.png') }}">
+        </div>
+
+        <div class="card">
+            <h2>Contract Type vs Churn</h2>
+            <img src="{{ url_for('static', filename='contract_churn.png') }}">
+        </div>
+
+        <div class="card">
+            <h2>Internet Service vs Churn</h2>
+            <img src="{{ url_for('static', filename='internet_churn.png') }}">
+        </div>
+
+        <div class="card">
+            <h2>Monthly Charges Distribution</h2>
+            <img src="{{ url_for('static', filename='monthly_charges.png') }}">
+        </div>
+
+        <div class="card">
+            <h2>Tenure Distribution</h2>
+            <img src="{{ url_for('static', filename='tenure_distribution.png') }}">
+        </div>
+
+        <div class="card">
+            <h2>Feature Importance</h2>
+            <img src="{{ url_for('static', filename='feature_importance.png') }}">
+        </div>
+
+        <div class="card">
+            <h2>Confusion Matrix</h2>
+            <img src="{{ url_for('static', filename='confusion_matrix.png') }}">
+        </div>
+
+    </div>
+
+    <!-- Project Summary -->
+
+    <div class="container">
+
+        <div class="card" style="width:90%;">
+
+            <h2>Project Summary</h2>
+
+            <p>
+                This Customer Churn Analysis System uses machine learning
+                techniques to identify customers who are likely to leave
+                a telecom company. The project includes data preprocessing,
+                exploratory data analysis, feature engineering, predictive
+                modeling, and business recommendations.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="footer">
+        © 2026 Customer Churn Analysis | Developed by Atharv Jadhav
+    </div>
+
+</body>
+</html>

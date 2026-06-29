@@ -1,0 +1,301 @@
+/* =========================
+   Global Styles
+========================= */
+
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:#f4f7fc;
+    color:#333;
+}
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar{
+    background:linear-gradient(90deg,#1e3c72,#2a5298);
+    padding:18px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#ffd700;
+}
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.hero h1{
+    color:white;
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn{
+    background:white;
+    color:#1e3c72;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ffd700;
+    color:black;
+}
+
+button{
+    width:100%;
+    background:linear-gradient(90deg,#1e3c72,#2a5298);
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+   Container
+========================= */
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:30px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+/* =========================
+   Cards
+========================= */
+
+.card{
+    background:white;
+    width:500px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.2);
+}
+
+.card h2{
+    color:#1e3c72;
+    margin-bottom:20px;
+}
+
+.card p,
+.card li{
+    line-height:1.8;
+}
+
+/* =========================
+   Headings
+========================= */
+
+h1,
+h2,
+h3{
+    color:#1e3c72;
+}
+
+/* =========================
+   Forms
+========================= */
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    box-sizing:border-box;
+    font-size:16px;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:#1e3c72;
+    box-shadow:0 0 10px rgba(30,60,114,0.3);
+}
+
+/* =========================
+   Images
+========================= */
+
+img{
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    margin-top:15px;
+    transition:0.3s;
+}
+
+img:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+   Statistics Cards
+========================= */
+
+.stats-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:40px 20px;
+}
+
+.stats-card{
+    width:220px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.stats-card:hover{
+    transform:translateY(-10px);
+}
+
+.stats-card h2{
+    color:#1e3c72;
+    font-size:40px;
+    margin:0;
+}
+
+.stats-card p{
+    color:gray;
+    font-size:18px;
+}
+
+/* =========================
+   Prediction Result
+========================= */
+
+.warning-box{
+    background:#ffe5e5;
+    border-left:6px solid red;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.result-box{
+    background:#e8fff0;
+    border-left:6px solid green;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.warning-box h3{
+    color:red;
+}
+
+.result-box h3{
+    color:green;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.footer{
+    background:#1e3c72;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+/* =========================
+   Login Card
+========================= */
+
+.login-card{
+    max-width:450px;
+    margin:50px auto;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .navbar a{
+        display:block;
+        margin:10px;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .stats-card{
+        width:90%;
+    }
+}

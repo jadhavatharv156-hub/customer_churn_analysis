@@ -188,12 +188,28 @@ for column in df.columns:
 print("\nData Types After Encoding:")
 print(df.dtypes)
 
+print("\nEncoded Values:")
+print(df[[
+    "gender",
+    "Contract",
+    "InternetService"
+]].head(10))
+
 # ==========================
 # STEP 27: Features and Target
 # ==========================
-X = df.drop("Churn", axis=1)
+# Features for prediction
+X = df[[
+    "gender",
+    "Contract",
+    "tenure",
+    "MonthlyCharges",
+    "InternetService"
+]]
+
 y = df["Churn"]
 print(X.head())
+
 # ==========================
 # STEP 28: Train-Test Split
 # ==========================
@@ -211,23 +227,26 @@ X_train, X_test, y_train, y_test = train_test_split(
 # ==========================
 from sklearn.linear_model import LogisticRegression
 
-model = LogisticRegression(max_iter=5000)
-
-print("\nX Data Types:")
-print(X.dtypes)
-
-print("\nColumns with object data:")
-print(X.select_dtypes(include=["object"]).columns)
+model = LogisticRegression(max_iter=2000)
 
 model.fit(X_train, y_train)
 
 # ==========================
-# STEP 30: Predictions
+# STEP 30: Prediction
 # ==========================
 y_pred = model.predict(X_test)
 
 # ==========================
-# STEP 31: Accuracy
+# STEP 31: Save Model
+# ==========================
+import joblib
+
+joblib.dump(model, "model.pkl")
+
+print("Model Saved Successfully!")
+
+# ==========================
+# STEP 32: Accuracy
 # ==========================
 from sklearn.metrics import accuracy_score
 
@@ -237,19 +256,20 @@ print("\nModel Accuracy:")
 print(round(accuracy * 100, 2), "%")
 
 # ==========================
-# STEP 32: Confusion Matrix Plot
+# STEP 33: Confusion Matrix
 # ==========================
 from sklearn.metrics import confusion_matrix
-import seaborn as sns
 
 cm = confusion_matrix(y_test, y_pred)
 
 plt.figure(figsize=(6,4))
 
-sns.heatmap(cm,
-            annot=True,
-            fmt="d",
-            cmap="Blues")
+sns.heatmap(
+    cm,
+    annot=True,
+    fmt="d",
+    cmap="Blues"
+)
 
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
@@ -259,6 +279,9 @@ plt.savefig("images/confusion_matrix.png")
 
 plt.show()
 
+# ==========================
+# STEP 34: Feature Importance
+# ==========================
 from sklearn.ensemble import RandomForestClassifier
 
 rf = RandomForestClassifier(random_state=42)
@@ -277,17 +300,18 @@ feature_importance = feature_importance.sort_values(
     ascending=False
 )
 
-print(feature_importance.head(10))
+print("\nFeature Importance:")
+print(feature_importance)
 
-plt.figure(figsize=(8,6))
+plt.figure(figsize=(8,5))
 
 sns.barplot(
     x="Importance",
     y="Feature",
-    data=feature_importance.head(10)
+    data=feature_importance
 )
 
-plt.title("Top 10 Important Features")
+plt.title("Feature Importance")
 
 plt.savefig("images/feature_importance.png")
 

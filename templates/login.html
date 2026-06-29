@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login | Customer Churn Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="/">Login</a>
+    <a href="/home">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/prediction">Prediction</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+</div>
+
+<div class="hero">
+    <h1>Customer Churn Analysis System</h1>
+    <p>Machine Learning • Data Analytics • Flask Dashboard</p>
+</div>
+
+<div class="container">
+
+    <div class="card" style="max-width:500px; margin:auto;">
+
+        <h2 style="text-align:center;">
+            🔐 User Login
+        </h2>
+
+        <form action="/home">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                placeholder="Enter Username"
+                required>
+
+            <br><br>
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                placeholder="Enter Password"
+                required>
+
+            <br><br>
+
+            <button type="submit" style="width:100%;">
+                Login
+            </button>
+
+        </form>
+
+        <br>
+
+        <p style="text-align:center;">
+            Customer Retention Analytics Dashboard
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Atharv Jadhav | Customer Churn Analysis
+</footer>
+
+</body>
+</html>

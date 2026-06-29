@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/prediction">Prediction</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Customer Churn Prediction</h1>
+        <p>
+            Predict whether a customer is likely to stay or leave the company.
+        </p>
+    </section>
+
+    <!-- Prediction Form -->
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Customer Details</h2>
+
+            <form method="POST">
+
+                <label>Gender</label>
+                <select name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+
+                <label>Contract Type</label>
+                <select name="contract" required>
+                    <option value="">Select Contract</option>
+                    <option>Month-to-month</option>
+                    <option>One year</option>
+                    <option>Two year</option>
+                </select>
+
+                <label>Internet Service</label>
+                <select name="internet" required>
+                    <option value="">Select Internet Service</option>
+                    <option>DSL</option>
+                    <option>Fiber optic</option>
+                    <option>No</option>
+                </select>
+
+                <label>Tenure (Months)</label>
+                <input type="number"
+                       name="tenure"
+                       min="0"
+                       max="72"
+                       required>
+
+                <label>Monthly Charges ($)</label>
+                <input type="number"
+                       step="0.01"
+                       name="monthly_charges"
+                       required>
+
+                <button type="submit">
+                    Predict Churn
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    {% if prediction %}
+
+    <!-- Prediction Result -->
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Prediction Result</h2>
+
+            {% if "Churn" in prediction %}
+
+            <div class="warning-box">
+
+                <h3>{{ prediction }}</h3>
+
+                <p>
+                    The customer has a higher probability of leaving the company.
+                </p>
+
+                <h2>{{ probability }}%</h2>
+
+            </div>
+
+            {% else %}
+
+            <div class="result-box">
+
+                <h3>{{ prediction }}</h3>
+
+                <p>
+                    The customer is likely to stay with the company.
+                </p>
+
+                <h2>{{ 100 - probability }}%</h2>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- Customer Status -->
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Customer Status</h2>
+
+            {% if "Churn" in prediction %}
+
+            <p><strong>Risk Level:</strong> High</p>
+            <p><strong>Action Required:</strong> Immediate retention strategy</p>
+
+            {% else %}
+
+            <p><strong>Risk Level:</strong> Low</p>
+            <p><strong>Action Required:</strong> Maintain customer engagement</p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- Recommendations -->
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Business Recommendations</h2>
+
+            {% if "Churn" in prediction %}
+
+            <ul>
+                <li>Offer customer discounts.</li>
+                <li>Provide loyalty rewards.</li>
+                <li>Improve customer support.</li>
+                <li>Promote long-term contracts.</li>
+                <li>Conduct retention campaigns.</li>
+            </ul>
+
+            {% else %}
+
+            <ul>
+                <li>Maintain service quality.</li>
+                <li>Promote premium plans.</li>
+                <li>Provide loyalty benefits.</li>
+                <li>Increase customer engagement.</li>
+                <li>Offer additional services.</li>
+            </ul>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    <!-- Footer -->
+
+    <div class="footer">
+        © 2026 Customer Churn Analysis | Developed by Atharv Jadhav
+    </div>
+
+</body>
+</html>
